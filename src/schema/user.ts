@@ -9,3 +9,7 @@ export type RegistrationBody={
     email:string,
     password:string
 }
+
+export const loginSchema = registrationSchema
+
+export type LoginBody=RegistrationBody
