@@ -21,3 +21,12 @@ export async function getUserByEmail(email:string){
         return null
     }
 }
+
+export async function getUserById(_id:string){
+    try{
+        return await UserModel.findById(_id)
+    }
+    catch{
+        null
+    }
+}

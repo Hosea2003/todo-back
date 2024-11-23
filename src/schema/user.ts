@@ -1,5 +1,9 @@
 import { z } from "zod";
 
+export type DecodedToken = {
+    _id:string
+}
+
 export const registrationSchema=z.object({
     email:z.string().email(),
     password:z.string()

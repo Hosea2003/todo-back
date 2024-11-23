@@ -30,4 +30,7 @@ export class encrypt{
 
         return {accessToken, refreshToken}
     }
+    static verifyToken(token:string){
+        return jwt.verify(token, SECRET_KEY as Secret)
+    }
 }
