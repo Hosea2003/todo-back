@@ -5,8 +5,6 @@ import { LoginBody, loginSchema, RegistrationBody, registrationSchema } from "..
 import { createUser, getUserByEmail } from "../services/user.services";
 import { encrypt } from "../utils/encryption";
 import { StatusCodes } from "http-status-codes";
-import { isAuthenticated } from "../middlewares/authenticationMiddleware";
-import { AppRequest } from "../schema/request";
 
 export const userRouter = Router()
 
