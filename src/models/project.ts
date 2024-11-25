@@ -13,7 +13,7 @@ const projectSchema = new Schema<IProject>({
     },
     owner:{
         type:Schema.Types.ObjectId,
-        ref:"user",
+        ref:"User",
         required:[true, "owner is required"]
     }
 })
