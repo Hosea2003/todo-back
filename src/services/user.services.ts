@@ -14,7 +14,7 @@ export async function createUser(userData:Partial<IUser>){
 
 export async function getUserByEmail(email:string){
     try{
-        const user = await UserModel.findOne({email:email})
+        const user = await UserModel.findOne({email:email}).select("+password")
         return user
     }
     catch{
