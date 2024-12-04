@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import { z, ZodError } from "zod";
+import { BadRequestException } from "../exceptions/exceptions";
 
 export function validateData(schema:z.ZodObject<any, any>){
     return (req:Request, res:Response, next:NextFunction)=>{
@@ -13,9 +14,10 @@ export function validateData(schema:z.ZodObject<any, any>){
                 const errorMessages = error.errors.map((issue:any)=>({
                     message:`${issue.path.join('.')} is ${issue.message}`
                 }))
-                return res.status(StatusCodes.BAD_REQUEST).json({error:errorMessages})
+                // return res.status(StatusCodes.BAD_REQUEST).json({error:errorMessages})
+                throw new BadRequestException(errorMessages);
             }
-            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({error:"Internal server"})
+            throw new Error();
         }
     }
 }
