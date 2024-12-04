@@ -23,7 +23,6 @@
     "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^22.9.1",
     "nodemon": "^3.1.7",
-    "pre-commit": "^1.2.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
   },
